@@ -9,26 +9,10 @@ if(isset($_POST['submit'])) {
 		$name = trim($_POST['contactname']);
 	}
 	
-	//Check to make sure that the phone field is not empty
-	if(trim($_POST['phone']) == '') {
-		$hasError = true;
-	} else {
-		$phone = trim($_POST['phone']);
-	}
 	
-	//Check to make sure that the name field is not empty
-	if(trim($_POST['weburl']) == '') {
-		$hasError = true;
-	} else {
-		$weburl = trim($_POST['weburl']);
-	}
+	
 
-	//Check to make sure that the subject field is not empty
-	if(trim($_POST['subject']) == '') {
-		$hasError = true;
-	} else {
-		$subject = trim($_POST['subject']);
-	}
+
 
 	//Check to make sure sure that a valid email address is submitted
 	if(trim($_POST['email']) == '')  {
@@ -52,7 +36,7 @@ if(isset($_POST['submit'])) {
 
 	//If there is no error, send the email
 	if(!isset($hasError)) {
-		$emailTo = 'you@yourwebsite.com'; // Put your own email address here
+		$emailTo = 'leadherforward2013@gmail.com'; // Put your own email address here
 		$body = "Name: $name \n\nEmail: $email \n\nPhone Number: $phone \n\nSubject: $subject \n\nComments:\n $comments";
 		$headers = 'From: My Site <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
 
@@ -66,9 +50,11 @@ if(isset($_POST['submit'])) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Bootstrap Contact Form</title>
+<title>LeadHer Forward Contact Us</title>
 	
 <link rel="stylesheet/less" type="text/css" href="assets/less/bootstrap.less">
+  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.pack.js" type="text/javascript"></script>
@@ -79,14 +65,9 @@ if(isset($_POST['submit'])) {
 
 <body>
 <div class="container">
-	<div class="hero-unit">
-		<h1>Bootstrap Contact Form</h1>
-				<p>A simple PHP contact form that uses Bootstrap, from Twitter, for a base and has jQuery validation.</p>
-		
-				<h3>Fork on Github</h3>
-				<p>Want to add a contact form to your implementation of <a href="http://twitter.github.com/bootstrap/" title="Bootstrap, from Twitter">Bootstrap</a>? Download, fork, pull, file issues or whatever with my repo Github.</p>
-				<p class="pull-right"><a href="http://www.github.com/jackilyn/bootstrap-contact/" class="btn primary">View Repo on Github &raquo;</a></p>
-	</div>
+	
+		<h2>Contact LeadHerForward</h2>
+	
 		
 	
 	<div class="row">
@@ -106,7 +87,7 @@ if(isset($_POST['submit'])) {
 						<h3>Message Successfully Sent!</h3>
 						</div>
 						<div class="modal-body">
-						<p>Thank you for using our contact form, <strong><?php echo $name;?></strong>! Your email was successfully sent and we&rsquo;ll be in touch with you soon.</p>
+						<p>Thank you for contacting us, <strong><?php echo $name;?></strong>! Your email was successfully sent and we&rsquo;ll be in touch soon.</p>
 						</div>
 						<div class="modal-footer">
 						<a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
@@ -126,14 +107,6 @@ if(isset($_POST['submit'])) {
 						</div>
 					</div>
 					
-					<div class="clearfix">
-						<label for="phone">
-							Your Phone Number<span class="help-required">*</span>
-						</label>
-						<div class="input">
-							<input type="text" name="phone" id="phone" value="" class="span6 required" role="input" aria-required="true" />
-						</div>
-					</div>
 					
 
 					<div class="clearfix">
@@ -145,28 +118,10 @@ if(isset($_POST['submit'])) {
 						</div>
 					</div>
 					
-					<div class="clearfix">
-						<label for="weburl">
-							Your Website<span class="help-required">*</span>
-						</label>
-						<div class="input">
-							<input type="text" name="weburl" id="weburl" value="" class="span6 required url" role="input" aria-required="true" />
-						</div>
-					</div>
+					
 					
 
-					<div class="clearfix">
-						<label for="subject">
-							Subject<span class="help-required">*</span>
-						</label>
-						<div class="input">
-							<select name="subject" id="subject" class="span6 required" role="select" aria-required="true">
-								<option></option>
-								<option>One</option>
-								<option>Two</option>
-							</select>
-						</div>
-					</div>
+					
 
 					<div class="clearfix">
 						<label for="message">Message<span class="help-required">*</span></label>
